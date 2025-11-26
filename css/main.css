@@ -1,0 +1,166 @@
+/* DEVELOPER: Ali Chaudhry, IS117-001, Fall 2025 */
+/* main.css — Black & Gold (light background) accessible theme */
+
+/* Colors */
+:root {
+    --gold: #FFD700; /* high-contrast gold */
+    --gold-dark: #c7a300;
+    --black: #000000;
+    --body-bg: #ffffff;
+    --muted: #6c757d;
+}
+
+/* Global */
+html, body {
+    background-color: var(--body-bg);
+    color: var(--black);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: 16px; /* accessible base size */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar and footer */
+.bg-dark {
+    background-color: #0d0d0d !important;
+}
+.text-gold {
+    color: var(--gold) !important;
+}
+.navbar .nav-link {
+    color: #f8f9fa;
+}
+.navbar .nav-link:focus,
+.navbar .nav-link:hover {
+    color: var(--gold) !important;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Buttons */
+.btn-gold {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--black);
+}
+.btn-gold:hover,
+.btn-gold:focus {
+    background-color: var(--gold-dark);
+    border-color: var(--gold-dark);
+    color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(255,215,0,0.15);
+}
+
+/* Stretch nav links evenly + gold border */
+.nav-link-spaced {
+    font-size: 1.05rem;
+    letter-spacing: 0.4px;
+}
+
+/* Gold border utility */
+.border-gold {
+    border-color: var(--gold) !important;
+}
+
+/* Hover effects */
+.nav a:hover,
+.nav .nav-link:hover {
+    color: var(--gold) !important;
+}
+
+/* Dropdown background (dark theme) */
+.dropdown-menu-dark {
+    background-color: #111 !important;
+    border: 1px solid var(--gold);
+}
+
+/* Search bar sizing */
+form .form-control {
+    min-width: 200px;
+}
+
+/* Card image sizing */
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+@media (max-width: 576px) {
+    .card-img-top { height: 160px; }
+}
+
+/* Footer */
+.footer {
+    font-size: 0.9rem;
+}
+
+/* Accessibility: focus outline for keyboard users */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid rgba(255,215,0,0.35);
+    outline-offset: 2px;
+}
+
+/* Utilities */
+.text-secondary { color: var(--muted) !important; }
+
+/* Carousel caption readability */
+.carousel-caption h2, .carousel-caption p {
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+/* Small screens spacing */
+@media (max-width: 768px) {
+    .display-5 { font-size: 1.8rem; }
+}
+/* === Compact Carousel (Black & Gold Theme) === */
+
+/* Set carousel height */
+.carousel,
+.carousel-inner,
+.carousel-item {
+    height: 300px; /* default height for desktop */
+}
+
+/* Make images cover the carousel without distortion */
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: 200px; /* smaller height for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+        height: 150px; /* even smaller for phones */
+    }
+}
+
+/* Carousel captions readable on small carousel */
+.carousel-caption {
+    bottom: 10px; /* move caption closer to bottom */
+    padding: 0.5rem 1rem; /* reduce padding */
+    text-align: left; /* optional styling */
+}
+
+.carousel-caption h2,
+.carousel-caption p {
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    font-size: 1rem; /* smaller font for compact carousel */
+}
+
+/* Optional: add gold border to carousel for theme */
+.carousel {
+    border: 2px solid var(--gold);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
